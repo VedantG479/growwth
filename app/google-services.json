@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "117566574952",
+    "project_id": "growwth-d0361",
+    "storage_bucket": "growwth-d0361.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117566574952:android:96563662c325e6ba3e86dd",
+        "android_client_info": {
+          "package_name": "com.example.growwth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdAeiWbJcfMNVaIOXJkS-0ud4c2OBfJPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

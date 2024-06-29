@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.growwth.databinding.ActivityMainBinding
+import com.example.growwth.fragments.HomePage
 import com.example.growwth.fragments.Roadmaps
+import com.example.growwth.fragments.UserProfile
 
 class MainActivity : AppCompatActivity() {
     private val binding : ActivityMainBinding by lazy{
@@ -17,21 +19,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val fragmentManager = supportFragmentManager
+        val roadmapFragment = Roadmaps()
+        val homePageFragment = HomePage()
+        val userProfileFragment = UserProfile()
         val fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
-        val firstFragment = Roadmaps()
-        fragmentTransaction.add(R.id.fragmentContainer, firstFragment)
+        fragmentTransaction.add(R.id.fragmentContainer, homePageFragment)
         fragmentTransaction.commit()
 
         binding.bottomBar.setOnItemSelectedListener {
             when(it){
                 0->{
-                    Toast.makeText(this, "Roadmap Page", Toast.LENGTH_SHORT).show()
+                    val fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.fragmentContainer, roadmapFragment)
+                    fragmentTransaction.commit()
                 }
                 1->{
-                    Toast.makeText(this, "Calendar Page", Toast.LENGTH_SHORT).show()
+                    val fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.fragmentContainer, homePageFragment)
+                    fragmentTransaction.commit()
                 }
                 2->{
-                    Toast.makeText(this, "Profile Page", Toast.LENGTH_SHORT).show()
+                    val fragmentTransaction : FragmentTransaction = fragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.fragmentContainer, userProfileFragment)
+                    fragmentTransaction.commit()
                 }
             }
         }

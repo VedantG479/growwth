@@ -26,10 +26,10 @@ class Roadmaps : Fragment() {
         recyclerView1.layoutManager = LinearLayoutManager(context)
         recyclerView2.layoutManager = LinearLayoutManager(context)
 
-        adapter1 = FillRoadmapAdapter(headingsList1, requireContext()) { item, position ->
+        adapter1 = FillRoadmapAdapter(headingsList1, requireContext(), parentFragmentManager, R.id.fragmentContainer) { item, position ->
             moveItem(item, position, adapter1, adapter2)
         }
-        adapter2 = FillRoadmapAdapter(headingList2, requireContext()) { item, position ->
+        adapter2 = FillRoadmapAdapter(headingList2, requireContext(), parentFragmentManager, R.id.fragmentContainer) { item, position ->
             moveItem(item, position, adapter2, adapter1)
         }
 

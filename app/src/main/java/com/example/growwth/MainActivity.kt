@@ -10,7 +10,7 @@ import com.example.growwth.fragments.HomePage
 import com.example.growwth.fragments.Roadmaps
 import com.example.growwth.fragments.UserProfile
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), EnableTextViewListener {
     private val binding : ActivityMainBinding by lazy{
         ActivityMainBinding.inflate(layoutInflater)
     }
@@ -45,5 +45,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun setTextViewEnabled(isEnabled: Boolean) {
+        binding.heading.isEnabled = isEnabled
     }
 }

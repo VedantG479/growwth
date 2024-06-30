@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:src="@drawable/usercircle"
+            android:src="@drawable/baseline_emoji_emotions_24"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -89,7 +89,7 @@
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
-            android:text="Data Science, DevOps, Data Structures " />
+            android:text="Android,  Blockchain " />
 
         <TextView
             android:id="@+id/textView5"

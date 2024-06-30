@@ -57,6 +57,18 @@ class FillRoadmapAdapter(private var headingList: ArrayList<String>, private var
                         .addToBackStack(null)
                         .commit()
                 }
+                "backend" -> {
+                    fragmentManager.beginTransaction()
+                        .replace(containerId, RoadmapDetail.newInstance("Backend"))
+                        .addToBackStack(null)
+                        .commit()
+                }
+                "Blockchain" -> {
+                    fragmentManager.beginTransaction()
+                        .replace(containerId, RoadmapDetail.newInstance("blockchain"))
+                        .addToBackStack(null)
+                        .commit()
+                }
             }
         }
 

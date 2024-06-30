@@ -1,7 +1,6 @@
 package com.example.growwth.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.growwth.FillRoadmap
 import com.example.growwth.FillRoadmapAdapter
 import com.example.growwth.R
 import com.google.firebase.auth.FirebaseAuth
@@ -64,7 +64,6 @@ class Roadmaps : Fragment() {
 
                 for (data in snapshot.children) {
                     val roadmapName = data.child("name").getValue(String::class.java) ?: ""
-                    Log.d("Roadmap:", roadmapName)
                     roadmaps.add(roadmapName)
                 }
 

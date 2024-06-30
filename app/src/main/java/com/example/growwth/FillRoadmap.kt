@@ -14,4 +14,3 @@ object FillRoadmap {
         return headingList2
     }
 }
-

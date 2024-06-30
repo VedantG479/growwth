@@ -36,22 +36,29 @@ class CreateAccount : AppCompatActivity() {
             else{
                 auth.createUserWithEmailAndPassword(userEmail, userPassword).addOnCompleteListener {
                     if (it.isSuccessful) {
+                        Log.d("user","1")
                         val currentUser = auth.currentUser
                         currentUser?.let {user ->
+                            Log.d("user","2")
                             val userMap = hashMapOf("username" to username, "email" to userEmail, "dailyTime" to 2)
-                            Log.d("user", "User Created!")
-                            databaseReference.child("users").child(user.uid).child("details").setValue(userMap).addOnCompleteListener {
-                                if(it.isSuccessful){
-                                    Log.d("user","user created!")
+                            databaseReference.child("users").child(user.uid).child("details").setValue(userMap).addOnCompleteListener { task2 ->
+                                if (task2.isSuccessful) {
+                                    Log.d("user","3")
+                                    Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
+                                    startActivity(Intent(this, LoginActivity::class.java))
+                                    finish()
+                                } else {
+                                    Log.d("user","4")
+                                    Log.e("CreateAccount", "Error saving user data: ${task2.exception?.message}")
+                                    Toast.makeText(this, "Failed to save user data: ${task2.exception?.message}", Toast.LENGTH_SHORT).show()
                                 }
                             }
                         }
-                        Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, LoginActivity::class.java))
-                        finish()
                     }
                     else {
-                        Toast.makeText(this, "Error ${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                        Log.d("user","5")
+                        Log.e("CreateAccount", "Error creating user: ${it.exception?.message}")
+                        Toast.makeText(this, "Error: ${it.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

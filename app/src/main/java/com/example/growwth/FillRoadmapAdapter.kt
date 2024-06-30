@@ -10,9 +10,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.growwth.roadmaps.AndroidRoadmap
-import com.example.growwth.roadmaps.DevOpsRoadmap
-import com.example.growwth.roadmaps.FullStackRoadmap
+import com.example.growwth.fragments.RoadmapDetail
 
 class FillRoadmapAdapter(private var headingList: ArrayList<String>, private var context : Context, private val fragmentManager: FragmentManager,
                          private val containerId: Int, private val onItemClicked: (String, Int) -> Unit) : RecyclerView.Adapter<FillRoadmapAdapter.RoadmapViewHolder>(){
@@ -40,30 +38,28 @@ class FillRoadmapAdapter(private var headingList: ArrayList<String>, private var
         }
         holder.cardView.setOnClickListener {
             Toast.makeText(context, "You selected ${holder.roadmapHeading.text}", Toast.LENGTH_SHORT).show()
-            when(holder.roadmapHeading.text){
+            when(holder.roadmapHeading.text) {
                 "Android" -> {
-                    fragmentManager.beginTransaction().apply {
-                        replace(containerId, AndroidRoadmap())
-                        addToBackStack(null)
-                        commit()
-                    }
-                }
-                "FullStack" -> {
-                    fragmentManager.beginTransaction().apply {
-                        replace(containerId, FullStackRoadmap())
-                        addToBackStack(null)
-                        commit()
-                    }
+                    fragmentManager.beginTransaction()
+                        .replace(containerId, RoadmapDetail.newInstance("android"))
+                        .addToBackStack(null)
+                        .commit()
                 }
                 "DevOps" -> {
-                    fragmentManager.beginTransaction().apply {
-                        replace(containerId, DevOpsRoadmap())
-                        addToBackStack(null)
-                        commit()
-                    }
+                    fragmentManager.beginTransaction()
+                        .replace(containerId, RoadmapDetail.newInstance("devops"))
+                        .addToBackStack(null)
+                        .commit()
+                }
+                "FullStack" -> {
+                    fragmentManager.beginTransaction()
+                        .replace(containerId, RoadmapDetail.newInstance("fullstack"))
+                        .addToBackStack(null)
+                        .commit()
                 }
             }
         }
+
     }
 
     fun removeItem(position: Int) {

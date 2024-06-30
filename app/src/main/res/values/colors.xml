@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bottombar">#0B6EFE</color>
+    <color name="lighterbar">#4791FB</color>
 </resources>

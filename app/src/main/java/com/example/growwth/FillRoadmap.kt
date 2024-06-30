@@ -8,7 +8,7 @@ object FillRoadmap {
 
     fun getData2() : ArrayList<String>{
         headingList2.add("Android")
-        headingList2.add("Full Stack")
+        headingList2.add("FullStack")
         headingList2.add("DevOps")
 
         return headingList2

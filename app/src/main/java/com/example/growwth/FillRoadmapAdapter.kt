@@ -48,7 +48,7 @@ class FillRoadmapAdapter(private var headingList: ArrayList<String>, private var
                         commit()
                     }
                 }
-                "Full Stack" -> {
+                "FullStack" -> {
                     fragmentManager.beginTransaction().apply {
                         replace(containerId, FullStackRoadmap())
                         addToBackStack(null)

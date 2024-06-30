@@ -23,7 +23,7 @@ class StepAdapter(private var stepsList: List<Step>) : RecyclerView.Adapter<Step
         val step = stepsList[position]
         holder.title.text = step.title
         holder.desc.text = step.desc
-        holder.timeReqd.text = "${step.timeReqd} hours"
+        holder.timeReqd.text = "Time Required: ${step.timeReqd} hours"
     }
 
     override fun getItemCount(): Int = stepsList.size

@@ -1,40 +1,53 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="3dp"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/stepTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Step Title"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.017"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/stepDesc"
-        android:layout_width="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content"
-        android:text="Step Description"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/stepTitle"
-        app:layout_constraintTop_toBottomOf="@+id/stepTitle" />
+        <TextView
+            android:id="@+id/stepTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/semibold"
+            android:textColor="@color/lighterbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/stepTimeReqd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Time Required"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/stepDesc"
-        app:layout_constraintTop_toBottomOf="@+id/stepDesc" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/stepDesc"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="Step Description"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/stepTitle"
+            app:layout_constraintTop_toBottomOf="@+id/stepTitle" />
+
+        <TextView
+            android:id="@+id/stepTimeReqd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/regular"
+            android:textColor="#816EA3"
+            android:text="Time Required"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/stepDesc"
+            app:layout_constraintTop_toBottomOf="@+id/stepDesc" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

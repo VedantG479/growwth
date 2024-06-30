@@ -39,7 +39,12 @@ class CreateAccount : AppCompatActivity() {
                         val currentUser = auth.currentUser
                         currentUser?.let {user ->
                             val userMap = hashMapOf("username" to username, "email" to userEmail, "dailyTime" to 2)
-                            databaseReference.child("users").child(user.uid).child("details").setValue(userMap)
+                            Log.d("user", "User Created!")
+                            databaseReference.child("users").child(user.uid).child("details").setValue(userMap).addOnCompleteListener {
+                                if(it.isSuccessful){
+                                    Log.d("user","user created!")
+                                }
+                            }
                         }
                         Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, LoginActivity::class.java))

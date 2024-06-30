@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.growwth.FillRoadmap
-import com.example.growwth.FillRoadmapAdapter
 import com.example.growwth.R
 class AndroidRoadmap : Fragment() {
     private lateinit var recyclerView: RecyclerView
